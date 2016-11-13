@@ -1,0 +1,20 @@
+<mvc:View
+        controllerName="sap.ui.notificationsApp.controller.App"
+        xmlns="sap.m"
+        xmlns:mvc="sap.ui.core.mvc"
+        xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+    <SplitApp id="splitApp">
+        <detailPages>
+            <mvc:XMLView id="notificationsOverview" viewName="sap.ui.notificationsApp.view.NotificationsOverview"/>
+            <mvc:XMLView id="notificationsManage" viewName="sap.ui.notificationsApp.view.NotificationsManage"/>
+        </detailPages>
+        <masterPages>
+            <List itemPress="onPressGoToMaster">
+                <items>
+                    <StandardListItem title="Notifications Overview" type="Active" custom:to="notificationsOverview"/>
+                    <StandardListItem title="Notifications Manage" type="Active" custom:to="notificationsManage"/>
+                </items>
+            </List>
+        </masterPages>
+    </SplitApp>
+</mvc:View>
